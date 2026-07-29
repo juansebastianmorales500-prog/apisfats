@@ -11,8 +11,9 @@ def get_connection():
 
 def crear_tabla():
     conn = get_connection()
+
     conn.execute("""
-        CREATE TABLE IF NOT EXISTS productos (
+        CREATE TABLE IF NOT EXISTS productos(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             referencia TEXT NOT NULL,
             nombre TEXT NOT NULL,
@@ -21,5 +22,6 @@ def crear_tabla():
             estado BOOLEAN NOT NULL
         )
     """)
+
     conn.commit()
     conn.close()
